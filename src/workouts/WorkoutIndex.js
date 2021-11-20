@@ -23,11 +23,12 @@ const WorkoutIndex = (props) => {
     };
 
     const fetchWorkouts = () => {
-    fetch('http://localhost:3002/log', {
+    fetch(`http://localhost:3002/workoutlog/log`, {
         method: 'GET',
         headers: new Headers({
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${props.token}`
+            
         })
     })
     .then((res) => res.json())

@@ -8,9 +8,9 @@ const WorkoutEdit = (props) => {
     
     const workoutUpdate = (event, workout) => {
         event.preventDefault();
-        fetch(`http://localhost:3002/log/${props.workoutToUpdate.id}`, {
+        fetch(`http://localhost:3002/workoutlog/log/${props.workoutToUpdate.id}`, {
             method: "PUT",
-            body: JSON.stringify({ log: { description: editDesc, definition: editDef, result: editRes } }),
+            body: JSON.stringify({ workoutlog: { description: editDesc, definition: editDef, result: editRes } }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${props.token}`
@@ -31,7 +31,7 @@ const WorkoutEdit = (props) => {
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="description">Edit Description:</Label>
-                        <Input type="select" name="description" value={editDef} onChange={(e) => setEditDesc(e.target.value)} />
+                        <Input name="description" value={editDef} onChange={(e) => setEditDesc(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="definition">Edit Definition:</Label>

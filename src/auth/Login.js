@@ -7,7 +7,7 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3002/user/register",{//changed to 3002 server
+        fetch("http://localhost:3002/user/login",{//changed to 3002 server
             method: "POST",
             body: JSON.stringify({user:{user: username, password: password}}),
             headers: new Headers({
